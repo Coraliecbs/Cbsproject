@@ -1,0 +1,35 @@
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ site.url }}"><img src="{{ site.logo }}" class="d-inline-block" alt="logo agence Brahimo" width="100"> {{ site.title }}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarBrahimo" aria-controls="navbarBrahimo" aria-expanded="false" aria-label="Navigation mobile">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarBrahimo">
+        <div class="navbar-nav ml-auto">
+        {% for link in site.data.nav %}
+          {% if link.dropdown[0] %}
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{{ link.url }}" id="realisations" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link.title }}</a>
+            <div class="dropdown-menu" aria-labelledby="realisations">
+            {% for item in link.dropdown %}
+              <a class="dropdown-item" href="{{ item.url | relative_url }}">{{ item.page }}{% if item.url == page.url %} <span class="sr-only">(actuel)</span>{% endif %}</a>
+            {% endfor %}
+            </div>
+          </div>
+          {% else %}
+          <a class="nav-item nav-link{% if link.url == page.url %} active{% endif %}" href="{{ link.url | relative_url }}">{{ link.title }}{% if link.url == page.url %} <span class="sr-only">(actuel)</span>{% endif %}</a>
+          {% endif %}
+        {% endfor %}
+        </div>
+        <div style="color:white">
+          <span class="fa-stack">
+            <span class="fas fa-circle fa-stack-2x"></span>
+            <a href="{{ site.social.twitter }}" target="blank" rel="nofollow noopener"><span class="fab fa-twitter fa-stack-1x"></span></a>
+          </span>
+          <span class="fa-stack">
+            <span class="fas fa-circle fa-stack-2x"></span>
+            <a href="{{ site.social.facebook }}" target="blank" rel="nofollow noopener"><span class="fab fa-facebook fa-stack-1x"></span></a>
+          </span>
+        </div>
+      </div>
+    </nav>

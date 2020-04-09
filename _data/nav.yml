@@ -1,0 +1,26 @@
+# @Author: Andy Zébus
+# @Date: 2020-01-12T12:50:14-04:00
+# @Email: andy@esportsgp.fr
+# @Last modified by:   Andy Zébus
+# @Last modified time: 2020-01-12T14:10:02-04:00
+# @License: GPL-3.0
+---
+- title: Accueil
+  url:   /
+- title: Rénovation immobilière
+  url:   /renovation
+- title: Agence
+  url:   /agence
+- title: Nos réalisations
+  url: "#"
+  dropdown:
+  - page: Nos villas à étage
+    url: /villas-etages
+  - page: Nos villas de plain pied
+    url: /villas-plain-pied
+  - page: Aménagements
+    url: /amenagements
+  - page: Nos autres projets
+    url: /projets
+- title: À votre service
+  url:   /service
